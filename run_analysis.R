@@ -195,4 +195,4 @@ write.table (tidyData, file = "tidyData_tt.csv", sep=",")
 print ("Part 5 confirmed...tidyData written to csv file")
 
 #To load the created tidyData that this program has created, use the following code in R
-#read.csv ("tidyData_tt.csv", header=TRUE, sep=",")
+#read.table ("tidyData_tt.txt", header=TRUE)
