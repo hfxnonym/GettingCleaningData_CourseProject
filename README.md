@@ -1,5 +1,5 @@
 # GettingCleaningData_CourseProject
-________________________
+***
 CourseRA course project for Getting and Cleaning Data by Jeff Leek
 based on data collected and made publicly availabl by
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
@@ -8,7 +8,7 @@ DITEN - Universit? degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
-________________________
+***
 ##Data
 These data were extracted from a larger data set provided by the study authors. The following description is derived from their ReadMe file. 
 
@@ -24,7 +24,7 @@ tool - gyroscope or accelerometer
 magnitude - jerkmagnitude (derived in time) or magnitude (Euclidean)
 dependentMeasure - mean and standard deviation
 value - the standardized data averaged over subjectNumber and activityNam
-________________________
+***
 ##Script
 run_analysis.R
 >This script does the following.
@@ -42,12 +42,13 @@ run_analysis.R
 ##Interpretation - I selected only measures that listed an overall mean() or overall std() at the end of the column name. I did not retain any variables that measured on the X,Y,Z axes, presuming that the measures without axis labels were combined over these axes and therefore of greater relevance for future analyses. I thus retained means and standard deviations on each measure, presuming that the measures of relevance were the composite measures and not the raw axis data. I understood from the course forum that there was latitude in the interpretation of the instruction and that we had license to interpret the instruction accordingly.
 * Part4: Performed a series of substitutions to replace the column names with more meaningful descriptors that eliminated abbreviations (e.g., "Acc" was changed to "Accelerometer") and removed R-incompatible field separators. This satisfies the forth requirement of the course project by giving meaningful names to the variables. The original names that I modified were drawn from the features.txt file. I retained the structure of these labels but expanded the abbreviations to ful names and removed parentheses and dot separators.
 * Part5: Creates a tidy data set by melting the merged data, separating the variables into columns, and aggregating over these columns. This satisfies the final requirement of the project by creating a data set in which the data consists of an average of each of my selected variables for each activity and each subject. In accordance with tidy data principles
-*1) each variable measured is in one column, 
-*2) each different observation (as a function of subject number and activity name) is on one row, 
-*3) there is one table for this one kind of data (Samsung), 
-*4) there is a row at the top of the tidy data file that contains variable names,
-*5) data is saved with one file per table
-________________________
+ + each variable measured is in one column, 
+ + each different observation (as a function of subject number and activity name) is on one row, 
+ + there is one table for this one kind of data (Samsung), 
+ + there is a row at the top of the tidy data file that contains variable names,
+ + data is saved with one file per table
+
+***
 ##Original full data set
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 ##Full description of original data set
