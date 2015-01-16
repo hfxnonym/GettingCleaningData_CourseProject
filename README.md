@@ -26,6 +26,7 @@ dependentMeasure - mean and standard deviation
 value - the standardized data averaged over subjectNumber and activityNam
 ***
 ##Script
+*Warning: My R code is inelegant! I have never taken computer programming and the only R I know is what I learned in the CourseRA R programming course. I know that my code is not efficient or elegant. But it does accomplish the course goals of retrieving, manipulating, cleaning, and tidying data. Sorry if it is painful to read! Feedback, tips, and pointers are very welcome.*
 run_analysis.R
 >This script does the following.
 * Checks for the UCI HAR Dataset folder with its subfolders and downloads the folder if not found
