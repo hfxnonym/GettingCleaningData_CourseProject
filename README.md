@@ -52,7 +52,7 @@ run_analysis.R
 ##Code to open TidyData
 
 >To open the tidyData that was created using this script, use the following command in R:
-read.csv ("tidyData_tt.csv", header=TRUE, sep=",")
+read.table ("tidyData_tt.txt", header=TRUE)
 
 ***
 ##Original full data set
