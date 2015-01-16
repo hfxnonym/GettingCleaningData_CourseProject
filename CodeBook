@@ -37,3 +37,7 @@ dependentMeasure 17
     Text field indicating whether the dependent measure in the original data set was a mean or a standard deviation
       mean
       standardDeviation
+
+value 18
+    Mean force value for each subject by activity, standardized to vary between -1 and 1, with no measurement units
+      -1...1
