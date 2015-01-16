@@ -49,6 +49,12 @@ run_analysis.R
  + data is saved with one file per table
 
 ***
+##Code to open TidyData
+
+>To open the tidyData that was created using this script, use the following command in R:
+read.csv ("tidyData_tt.csv", header=TRUE, sep=",")
+
+***
 ##Original full data set
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 ##Full description of original data set
