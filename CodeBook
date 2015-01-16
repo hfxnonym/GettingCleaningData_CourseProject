@@ -1,0 +1,39 @@
+Data Dictionary - GettingCleaningData Course Project
+
+subjectNumber 2
+      1..30 Unique identifier assigned by original study authors to participants
+      
+activityName 18
+    Text field indicating subject activity at the time of recording
+      LAYING
+      SITTING
+      STANDING
+      WALKING
+      WALKING_DOWNSTAIRS
+      WALKING_UPSTAIRS
+      
+analysisDomain 9
+    Text field reporting whether data was transformed in time  or Fourier transformed on frequency
+      time
+      frequency
+      
+dataSource 7
+    Text field reporting whether the data was measured from the body or represents effects of gravity
+      body
+      gravity
+      
+tool 13
+    Text field describing whether the data was recorded by an accelerometer or gyroscope
+      accelerometer
+      gyroscope
+
+magnitude 13
+    Text field indicating whether the original body linear acceleration and angular velocity were 
+    derived in time to obtain Jerk signals (jerkmagnitude) or calculated using the Euclidean norm (magnitude)
+      jerkmagnitude
+      magnitude
+      
+dependentMeasure 17
+    Text field indicating whether the dependent measure in the original data set was a mean or a standard deviation
+      mean
+      standardDeviation
