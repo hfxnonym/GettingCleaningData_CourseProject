@@ -1,8 +1,32 @@
 # GettingCleaningData_CourseProject
+________________________
+CourseRA course project for Getting and Cleaning Data by Jeff Leek
+based on data collected and made publicly availabl by
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Universit? degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
+________________________
+##Data
+These data were extracted from a larger data set provided by the study authors. The following description is derived from their ReadMe file. 
 
-CourseProject
-##Scripts
-1)  run_analysis.R
+The authors conducted a study with 30 volunteers, aged 19-48 years of age, who performed six activities (Walking, Walking_Upstairs, Walking_Downstairs, Sitting, Standing, Lying) while wearing a Samsung smartphone. The original data were partitioned randomly to training and test sets; these data sets are merged in the current R program.
+
+The current R program extracts only a subset of the original data, selecting only those variable names (described in the authors' original "features.txt") that ended with mean() or std().
+
+The extracted data includes accelerometer and gyroscope signals that were measured in the time and frequency domains, whose source consisted of body or gravity forces that were standardized so as to represent deviations from a mean (no units). The authors report that signal magnitudes were derived in time to obtain jerk signals or according to the Euclidean norm; both magnitude types were extracted.
+
+The extracted data set is collapsed over subjectNumber and activityName and contains the following variables: analysisDomain - time or frequency based
+dataSource - body or gravity
+tool - gyroscope or accelerometer
+magnitude - jerkmagnitude (derived in time) or magnitude (Euclidean)
+dependentMeasure - mean and standard deviation
+value - the standardized data averaged over subjectNumber and activityNam
+________________________
+##Script
+run_analysis.R
 >This script does the following.
 * Checks for the UCI HAR Dataset folder with its subfolders and downloads the folder if not found
 * Sets file paths to point the program to the data within the UCI HAR Dataset folder
@@ -23,3 +47,8 @@ CourseProject
 *3) there is one table for this one kind of data (Samsung), 
 *4) there is a row at the top of the tidy data file that contains variable names,
 *5) data is saved with one file per table
+________________________
+##Original full data set
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+##Full description of original data set
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
