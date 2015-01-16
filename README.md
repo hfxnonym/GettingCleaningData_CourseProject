@@ -63,4 +63,4 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 ***
-##Thanks for reviewing and grading my project!!
+###Thanks for reviewing and grading my project!!
