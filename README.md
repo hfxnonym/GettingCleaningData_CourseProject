@@ -1,7 +1,7 @@
 # GettingCleaningData_CourseProject
 ***
 CourseRA course project for Getting and Cleaning Data by Jeff Leek
-based on data collected and made publicly availabl by
+based on data collected and made publicly available by
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
 DITEN - Universit? degli Studi di Genova.
@@ -18,15 +18,29 @@ The current R program extracts only a subset of the original data, selecting onl
 
 The extracted data includes accelerometer and gyroscope signals that were measured in the time and frequency domains, whose source consisted of body or gravity forces that were standardized so as to represent deviations from a mean (no units). The authors report that signal magnitudes were derived in time to obtain jerk signals or according to the Euclidean norm; both magnitude types were extracted.
 
-The extracted data set is collapsed over subjectNumber and activityName and contains the following variables: analysisDomain - time or frequency based
-dataSource - body or gravity
-tool - gyroscope or accelerometer
-magnitude - jerkmagnitude (derived in time) or magnitude (Euclidean)
-dependentMeasure - mean and standard deviation
-value - the standardized data averaged over subjectNumber and activityNam
+The extracted data set is collapsed over subjectNumber and activityName and contains the following variables:
+
+* analysisDomain
+  + time
+  + frequency
+* dataSource
+  + body
+  + gravity
+* tool
+  + gyroscope
+  + accelerometer
+* magnitude
+  + jerkmagnitude (derived in time)
+  + magnitude (Euclidean)
+* dependentMeasure extracted from original data set
+  + mean
+  + standard deviation
+* average
+  + the standardized data averaged over subjectNumber and activityNam
+
 ***
 ##Script
-*Warning: My R code is inelegant! I have never taken computer programming and the only R I know is what I learned in the CourseRA R programming course. I know that my code is not efficient or elegant. But it does accomplish the course goals of retrieving, manipulating, cleaning, and tidying data. Sorry if it is painful to read! Feedback, tips, and pointers are very welcome.*
+*Warning: My R code is inelegant! I have never taken computer programming and the only R I know is what I learned in the CourseRA R programming course. I know that my code is not efficient or pretty. But it does accomplish the course goals of retrieving, manipulating, cleaning, and tidying data. Sorry if it is painful to read! Feedback, tips, and pointers are very welcome.*
 
 Script name **run_analysis.R**
 >This script does the following.
@@ -54,7 +68,7 @@ Script name **run_analysis.R**
 ##Code to open TidyData
 
 >To open the tidyData that was created using this script, use the following command in R:
-read.table ("tidyData_tt.txt", header=TRUE)
+* read.table ("tidyData_tt.txt", header=TRUE)
 
 ***
 ##Original full data set
@@ -63,4 +77,4 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 ***
-###Thanks for reviewing and grading my project!!
+#####Thanks for reviewing and grading my project!!
