@@ -36,7 +36,7 @@ The extracted data set is collapsed over subjectNumber and activityName and cont
   + mean
   + standard deviation
 * average
-  + the standardized data averaged over subjectNumber and activityNam
+  + the standardized data averaged over subjectNumber and activityName
 
 ***
 ##Script
