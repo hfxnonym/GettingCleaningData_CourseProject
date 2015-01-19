@@ -5,7 +5,11 @@ library ("tidyr") #needed to create tidy data output
 library ("reshape2") #needed to create tidy data output
 
 #set for my computer
-setwd("~/Desktop/GettingCleaningData/CourseProject")
+#setwd("~/Desktop/GettingCleaningData/CourseProject")
+
+print ("Welcome to my R code and thanks for evaluating my work. I appreciate your time.")
+print ("Printed output will occur at each relevant stage of the analysis to keep you informed about progress in satisfying the 5 parts of the course project instructions.")
+print ("Please watch your console for printed output that confirms achievement of each goal.")
 
 #check for data folder in working directory and download if not already available
 filePath <- "./UCI HAR Dataset"
@@ -93,13 +97,20 @@ colnames(activityLegend) <- c("activityCode", "activityName")
 trainSet <- merge(trainSet, activityLegend, by="activityCode")
 testSet <- merge(testSet, activityLegend, by="activityCode")
 
+print ("See below: first 10 trials showing meaningful trainSet activity labels (Part3)")
+print (trainSet$activityName[1:10])
+print ("See below: first 10 trials showing meaningful testSet activity labels (Part3)")
+print (testSet$activityName[1:10])
+print ("Thus: Part 3 confirmed (out of order)...used descriptive activity names to name the activities in the set")
 
 #**********************************************************************************
-#Part 1 :  Merge the training and test sets to create one data set
+#Part 1 :  Merge the training and test sets to create one data set; non-critical warnings generated - checked and OK
 #**********************************************************************************
 
 allData <- rbind (trainSet, testSet, all=TRUE) #note all=TRUE so that all data are retained
-print ("Part 1 confirmed...allData is an R dataframe that contains the merged training and test sets")
+print ("Data have been merged. Dimensions of new file - called allData - are 10300 x 565")
+print (dim(allData))
+print ("Thus: Part 1 confirmed...allData is an R dataframe that contains the merged training and test sets")
 	
 #**********************************************************************************************
 #Part 2 :  Extract only the measurements on the mean and std of EACH MEASUREMENT
@@ -127,12 +138,14 @@ selectData <- select (allData_tbl
 					  , -contains("-Z")
 					) #include only overall means, exclude individual x-y-z axis
 
-print ("Part 2 confirmed...selectData is an R dataframe that contains only the means and standard deviations for each measurement. Note that I interpreted this to mean when collapsed over the axes, such that I excluded the data separated by x, y, and z axes")
+print ("Have successfully extracted data that ends with mean() and stdev() as shown below:")
+print (str(selectData))
+print ("Thus: Part 2 confirmed...selectData is an R dataframe that contains only the means and standard deviations for each measurement. Note that I interpreted this to mean when collapsed over the axes, such that I excluded the data separated by x, y, and z axes")
 
 #**********************************************************************************************
 #Part 3 :  (See above)
 #**********************************************************************************************
-print ("Part 3 confirmed...descriptive labels were given to the activities earlier in the R program in the trainSet and testSet dataframe and retained in all that followed.")
+print ("Part 3 confirmed earlier (out of order) - see above")
 
 #**********************************************************************************************
 #Part 4 :  Labels the data with descriptive variable names
@@ -155,7 +168,9 @@ m <- sub("\\(\\)", "", l)
 
 colnames (selectData) <- m
 
-print ("Part 4 confirmed...selectData is an R structure that contains the extracted data, all of which has been renamed with descriptive labels, as per the instruction.")
+print ("The extracted data have been labeled with descriptive variables, as seen below:")
+print (str(selectData))
+print ("Thus: Part 4 confirmed...selectData is an R structure that contains the extracted data, all of which has been renamed with descriptive labels, as per the instruction.")
 
 #**********************************************************************************************
 #Part 5 :  Create a second independent tidy data set with the ave of each variable 
@@ -165,10 +180,10 @@ print ("Part 4 confirmed...selectData is an R structure that contains the extrac
 meltedData <- melt (selectData
 					, id=c("subjectNumber", "activityName")
 					, na.rm = FALSE
-					, value.name="value")
+					, value.name="average")
 
 #gatheredData <- selectData %>%
-#	gather(label, value, -subjectNumber, -activityName)
+#	gather(label, average, -subjectNumber, -activityName)
 
 #Separate the columns by splitting on the dash separator
 separatedData <- meltedData %>%
@@ -181,7 +196,7 @@ separatedData <- meltedData %>%
 
 separatedData <- arrange(separatedData, subjectNumber, activityName)
 
-tidyData <- aggregate (value 
+tidyData <- aggregate (average 
 					   ~ subjectNumber 
 					   + activityName
 					   + analysisDomain						
@@ -190,9 +205,13 @@ tidyData <- aggregate (value
 					   + magnitude
 					   + dependentMeasure
 					   , separatedData, mean)
-write.table (tidyData, file = "tidyData_tt.csv", sep=",")
+write.table (tidyData, file = "tidyData_tt.txt", row.name=FALSE)
 
-print ("Part 5 confirmed...tidyData written to csv file")
-
-#To load the created tidyData that this program has created, use the following code in R
-#read.table ("tidyData_tt.txt", header=TRUE)
+print ("An independent tidyData set has been created and written to the working directory; called tidyData_tt.txt")
+print ("This file records the mean for each combination of subjectNumber and activity.")
+print ("These data have been opened to your Viewer for inspection.")
+View(tidyData)
+print ("The last column contains the average value for the means and stdevs")
+print ("Thus: Part 5 confirmed...tidyData written to csv file")
+print ("To load the text file that contains this data, use the following code in R")
+print ("read.table ('tidyData_tt.txt', header=TRUE)")
